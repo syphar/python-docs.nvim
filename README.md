@@ -21,7 +21,12 @@ It searches the [python package metadata](https://peps.python.org/pep-0345/) for
 use({
     "syphar/python-docs.nvim",
     rocks = { "net-url" },
-    requires = { "nvim-lua/plenary.nvim" },
+    requires = { "nvim-lua/plenary.nvim", "nvim-telescope/telescope.nvim" },
+    config = function()
+        -- this can also be somewhere else in your config, as long as it's after
+        -- telescope was loaded.
+        require("telescope").load_extension("python_docs")
+    end,
 })
 ```
 
