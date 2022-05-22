@@ -35,7 +35,6 @@ use({
 
 " shows the same list of package URLs, but will use a duckduckgo "I'm feeling
 " ducky" search for the given selected text on the selected documentation page.
-" GitHub URLs will use GitHub search.
 :Telescope python_docs search=some_function_name
 ```
 

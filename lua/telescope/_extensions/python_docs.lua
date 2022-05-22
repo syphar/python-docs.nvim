@@ -52,17 +52,10 @@ local python_package_docs = function(opts)
 				actions.close(prompt_bufnr)
 
 				if opts.search then
-					if string.find(selection.url, "https?://github.com") then
-						-- use github search for github repos
-						local u = url.parse(selection.url .. "/search")
-						u.query.q = opts.search
-						vim.fn["netrw#BrowseX"](tostring(u), 0)
-					else
-						-- duckduckgo search for the rest
-						local u = url.parse("http://duckduckgo.com/")
-						u.query.q = "\\" .. opts.search .. " site:" .. selection.url
-						vim.fn["netrw#BrowseX"](tostring(u), 0)
-					end
+					-- duckduckgo search for the rest
+					local u = url.parse("http://duckduckgo.com/")
+					u.query.q = "\\" .. opts.search .. " site:" .. selection.url
+					vim.fn["netrw#BrowseX"](tostring(u), 0)
 				else
 					vim.fn["netrw#BrowseX"](selection.url, 0)
 				end
