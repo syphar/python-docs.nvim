@@ -52,7 +52,7 @@ local python_package_docs = function(opts)
 				actions.close(prompt_bufnr)
 
 				if opts.search then
-					if string.find(selection.url, "https://github.com") then
+					if string.find(selection.url, "https?://github.com") then
 						-- use github search for github repos
 						local u = url.parse(selection.url .. "/search")
 						u.query.q = opts.search
