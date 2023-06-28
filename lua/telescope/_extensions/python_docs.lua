@@ -7,7 +7,7 @@ end
 local plugin_base_directory = vim.fn.fnamemodify(require("plenary.debug_utils").sourced_filepath(), ":h:h:h:h")
 
 local python_package_docs = function(opts)
-	local url = require("net.url")
+	local url = require("url")
 	local actions = require("telescope.actions")
 	local action_state = require("telescope.actions.state")
 	local finders = require("telescope.finders")

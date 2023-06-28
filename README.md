@@ -20,7 +20,6 @@ It searches the [python package metadata](https://peps.python.org/pep-0345/) for
 ```lua
 use({
     "syphar/python-docs.nvim",
-    rocks = { "net-url" },
     requires = { "nvim-lua/plenary.nvim", "nvim-telescope/telescope.nvim" },
     config = function()
         -- this can also be somewhere else in your config, as long as it's after
