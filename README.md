@@ -15,7 +15,8 @@ It searches the [python package metadata](https://peps.python.org/pep-0345/) for
 * plenary.nvim (which is coming with telescope anyways)
 * a `python3` executable
 
-## installation via `packer.nvim`
+## installation 
+### `packer.nvim`
 
 ```lua
 use({
@@ -27,6 +28,19 @@ use({
         require("telescope").load_extension("python_docs")
     end,
 })
+```
+
+### `lazy.nvim`
+
+```lua
+{
+  "syphar/python-docs.nvim",
+  dependencies = { "nvim-lua/plenary.nvim", "nvim-telescope/telescope.nvim" },
+  event = "VeryLazy",
+  config = function()
+    require("telescope").load_extension("python_docs")
+  end,
+}
 ```
 
 ## usage
